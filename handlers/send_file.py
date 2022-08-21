@@ -18,7 +18,7 @@ async def reply_forward(message: Message, file_id: int):
     except FloodWait as e:
         await asyncio.sleep(8)
         await reply_forward(message, file_id)
-
+        await message.delete()
 
 async def media_forward(bot: Client, user_id: int, file_id: int):
     try:
@@ -31,9 +31,10 @@ async def media_forward(bot: Client, user_id: int, file_id: int):
     except FloodWait as e:
         await asyncio.sleep(8)
         return media_forward(bot, user_id, file_id)
-
+        await message.delete()
 
 async def send_media_and_reply(bot: Client, user_id: int, file_id: int):
     sent_message = await media_forward(bot, user_id, file_id)
     await reply_forward(message=sent_message, file_id=file_id)
     await asyncio.sleep(2)
+    await sent_message.delete()
