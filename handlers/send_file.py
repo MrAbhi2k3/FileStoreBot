@@ -15,7 +15,7 @@ async def reply_forward(message: Message, file_id: int):
             f"https://t.me/{Config.BOT_USERNAME}?start=PredatorHackerzZ_{str_to_b64(str(file_id))}\n\n"
             f"__To Retrive the Stored File, just open the link!__",
             disable_web_page_preview=True, quote=True)
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
         await message.delete()
     except FloodWait as e:
         await asyncio.sleep(1)
@@ -30,12 +30,12 @@ async def media_forward(bot: Client, user_id: int, file_id: int):
             return await bot.forward_messages(chat_id=user_id, from_chat_id=Config.DB_CHANNEL,
                                               message_ids=file_id)
     except FloodWait as e:
-        await asyncio.sleep(1800)
+        await asyncio.sleep(1)
         return media_forward(bot, user_id, file_id)
         await message.delete()
 
 async def send_media_and_reply(bot: Client, user_id: int, file_id: int):
     sent_message = await media_forward(bot, user_id, file_id)
     await reply_forward(message=sent_message, file_id=file_id)
-    await asyncio.sleep(1800)
+    await asyncio.sleep(1)
     await sent_message.delete()
