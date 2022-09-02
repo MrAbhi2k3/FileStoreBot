@@ -74,7 +74,7 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("BotsList Channel", url="https://t.me/PayForBotz")
+                        InlineKeyboardButton("BotsList Channel", url="https://t.me/+sZyubeV2TSYyMTA1")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -354,7 +354,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("BotsList Channel", url="https://t.me/PayForBotz")
+                        InlineKeyboardButton("BotsList Channel", url="https://t.me/+sZyubeV2TSYyMTA1")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
