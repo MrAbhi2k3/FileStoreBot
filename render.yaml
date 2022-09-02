@@ -1,1 +1,3 @@
-render
+build:
+  docker:
+    worker: Dockerfile
